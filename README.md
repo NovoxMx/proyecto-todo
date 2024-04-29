@@ -5,9 +5,9 @@ Proyecto de ToDo-App en Next.js.
 ### 🚀 Como empezar
 
 - Clonar o descargar repositorio.
-- Instalar dependencias con npm i.
-- Correr la aplicacion con npm run dev.
-- Correr el "server" con npm run json-server.
+- Instalar dependencias con ```npm i```.
+- Correr la aplicacion con ```npm run dev```.
+- Correr el "server" con ```npm run json-server```.
 - Usa la aplicacion en http://localhost:3000 en tu navegador web.
 
 ### 📦 Creado con
