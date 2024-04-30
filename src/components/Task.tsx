@@ -22,6 +22,9 @@ const Task: React.FC<TaskProps> = ({ task }) => {
     await editTodo({
       id: task.id,
       text: taskToEdit,
+      date: new Date().toISOString(),
+      importance: "low",
+      done: false,
     });
     setOpenModalEdit(false);
     router.refresh();
@@ -45,7 +48,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
         />
         <Modal modalOpen={openModalEdit} setModalOpen={setOpenModalEdit}>
           <form onSubmit={handleSubmitEditTodo}>
-            <h3 className='font-bold text-lg'>Edit task</h3>
+            <h3 className='font-bold text-lg'>Editar Tarea</h3>
             <div className='modal-action'>
               <input
                 value={taskToEdit}
@@ -55,7 +58,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
                 className='input input-bordered w-full'
               />
               <button type='submit' className='btn'>
-                Submit
+                Enviar
               </button>
             </div>
           </form>
@@ -68,11 +71,11 @@ const Task: React.FC<TaskProps> = ({ task }) => {
         />
         <Modal modalOpen={openModalDeleted} setModalOpen={setOpenModalDeleted}>
           <h3 className='text-lg'>
-            Are you sure, you want to delete this task?
+            ¿Estas seguro que deseas eliminar esta tarea?
           </h3>
-          <div className='modal-action'>
+          <div className='modal-action justify-center'>
             <button onClick={() => handleDeleteTask(task.id)} className='btn'>
-              Yes
+              sesguro
             </button>
           </div>
         </Modal>
