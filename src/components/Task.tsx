@@ -18,16 +18,16 @@ const Task: React.FC<TaskProps> = ({ task }) => {
   const [taskToEdit, setTaskToEdit] = useState<string>(task.text);
   const [date, setDate] = useState<string>(task.date);
   const [importance, setImportance] = useState<string>(task.importance);
-  const [isChecked, setIsChecked] = useState<boolean>(task.done); 
+  const [isChecked, setIsChecked] = useState<boolean>(task.done);
 
   const handleCheckboxChange = async () => {
-    setIsChecked(!isChecked); 
+    setIsChecked(!isChecked);
     await editTodo({
       id: task.id,
       text: task.text,
       date: task.date,
       importance: task.importance,
-      done: !isChecked, 
+      done: !isChecked,
     });
   };
 
@@ -36,7 +36,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
     await editTodo({
       id: task.id,
       text: taskToEdit,
-      date: new Date().toISOString(),
+      date: date,
       importance: importance,
       done: isChecked,
     });
@@ -80,7 +80,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
           size={25}
         />
         <Modal modalOpen={openModalEdit} setModalOpen={setOpenModalEdit}>
-          <form onSubmit={handleSubmitEditTodo} className='p-5'>
+          <form onSubmit={handleSubmitEditTodo} className='grid flex justify-center'>
             <h3 className='font-bold text-lg mb-3'>Editar Tarea</h3>
             <input
               value={taskToEdit}
@@ -89,7 +89,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
               placeholder='Tarea'
               className='input input-bordered mb-3'
             />
-            <input 
+            <input
               value={date}
               onChange={(e) => setDate(e.target.value)}
               type="date"
@@ -118,11 +118,11 @@ const Task: React.FC<TaskProps> = ({ task }) => {
               ¿Estás seguro que deseas eliminar esta tarea?
             </h3>
             <div className='flex justify-center'>
-              <button onClick={() => handleDeleteTask(task.id)} className='btn btn-danger mr-3'>
-                Sí, eliminar
-              </button>
-              <button onClick={() => setOpenModalDeleted(false)} className='btn btn-secondary'>
+              <button onClick={() => setOpenModalDeleted(false)} className='btn bg-[#000000] mr-4'>
                 Cancelar
+              </button>
+              <button onClick={() => handleDeleteTask(task.id)} className='btn ml-4'>
+                Sí, eliminar
               </button>
             </div>
           </div>
