@@ -56,17 +56,17 @@ const Task: React.FC<TaskProps> = ({ task }) => {
 
   return (
     <tr key={task.id} >
-      <td className={isChecked ? "bg-black text-white" : ""}>{task.text}</td>
-      <td className={isChecked ? "bg-black text-white" : ""}>{task.date}</td>
-      <td className={isChecked ? "bg-black text-white" : ""}>{task.importance}</td>
-      <td className={isChecked ? "bg-black text-white" : ""}>
+      <td className={isChecked ? "bg-black text-white dark:bg-white dark:text-black" : ""}>{task.text}</td>
+      <td className={isChecked ? "bg-black text-white dark:bg-white dark:text-black" : ""}>{task.date}</td>
+      <td className={isChecked ? "bg-black text-white dark:bg-white dark:text-black" : ""}>{task.importance}</td>
+      <td className={isChecked ? "bg-black text-white dark:bg-white dark:text-black" : ""}>
         <input
           type="checkbox"
           checked={isChecked}
           onChange={handleCheckboxChange}
         />
       </td>
-      <td className={isChecked ? "flex gap-5 " : "flex gap-5"}>
+      <td className="flex gap-5 ">
         <FiEdit
           onClick={() => setOpenModalEdit(true)}
           cursor='pointer'
