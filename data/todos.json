@@ -3,8 +3,8 @@
     {
       "id": "4",
       "text": "Ir al mercado",
-      "date": "2024-04-29",
-      "importance": "alta",
+      "date": "2024-05-02",
+      "importance": "baja",
       "done": false
     },
     {
@@ -12,13 +12,6 @@
       "text": "Estudiar ingles",
       "date": "2024-04-29",
       "importance": "alta",
-      "done": false
-    },
-    {
-      "id": "b3d0dfe9-ce5d-4761-9da4-f911d62103e4",
-      "text": "asdasd",
-      "date": "2024-04-30T00:09:30.715Z",
-      "importance": "",
       "done": false
     }
   ]

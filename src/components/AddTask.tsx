@@ -11,7 +11,6 @@ const AddTask = () => {
   const router = useRouter();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [newTaskValue, setNewTaskValue] = useState<string>("");
-  const [newTaskDate, setNewTaskDate] = useState<string>("");
   const [newTaskImportance, setNewTaskImportance] = useState<string>("");
 
 
@@ -57,10 +56,16 @@ const AddTask = () => {
             />
             <select
               value={newTaskImportance}
+              onChange={(e) => setNewTaskImportance(e.target.value)}
               className='input input-bordered w-full'
               placeholder='Selecciona una opción'
 
-            />
+            >
+              <option value=''>Selecciona una opción</option>
+              <option value='baja'>Baja</option>
+              <option value='media'>Media</option>
+              <option value='alta'>Alta</option>
+            </select>
             <button type='submit' className='btn'>
               Guardar
             </button>
